@@ -1,0 +1,26 @@
+{% extends "../../templates/experiment.html" %}
+
+{% block content %}
+{{ block.super }}
+<div id="flash"></div>
+<p>
+Just three holes.  Aim with with mouse.  Click to putt.  Force ∝ distance from mouse to ball.
+</p>
+
+<p class="attribution">
+  <img src="/media/cc_by.png"
+       alt="creative commons"
+       width="30"
+       height="30" />
+  Sounds and title image plundered from the internet.
+</p>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script>
+  swfobject.embedSWF('/media/experiments/minigolf.swf', 'flash', '550', '400', '9.0.0');
+  var flash;
+  window.onload = function() {
+    flash = document.getElementById('flash');
+    flash.focus();
+  }
+</script>
+{% endblock %}

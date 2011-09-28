@@ -1,0 +1,29 @@
+application: hurrymaplelad
+version: 1-0-alpha
+runtime: python
+api_version: 1
+
+handlers:
+
+- url: /media
+  static_dir: media
+
+- url: /styles
+  static_dir: styles/min
+
+- url: /scripts
+  static_dir: javascript/min
+
+- url: /.*
+  script: python/source/main.py
+
+skip_files:
+- ^app\.yaml$
+- ^build.xml$
+- ^.*/index\.yaml$
+- ^.*\.py[co]$
+- ^.*~$
+- ^.*/\..*$
+- ^javascript/source$
+- ^styles/source$
+

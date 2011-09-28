@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>{% block title%}Hurry Maple Lad{% endblock %}</title>
+<link rel="stylesheet" href="/styles/base.css">
+{% block head %}
+{% endblock %}
+</head>
+<body>
+<div class="wrapper">
+
+<header>
+  hurrymaplelad
+  <img src="/media/margin.png"/>
+</header>
+
+<div id="content">
+  {% block content %}
+  {% endblock %}
+</div>
+</div> {# end wrapper #}
+
+<div id="leftbar">
+  {% block leftbar %}
+  {% endblock %}
+</div>
+
+<footer>
+<div class="content">
+</div>
+</footer>
+</body>
+</html>

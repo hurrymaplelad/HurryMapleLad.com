@@ -1,0 +1,23 @@
+{% extends "../../templates/base.html" %}
+
+{% block title %}
+{{ experiment.title }} - {{ block.super }}
+{% endblock %}
+
+{% block leftbar %}
+{% if tags %}
+<ul class="tags">
+  {% for tag in experiment.tags %}
+  <li><a href="/tags/{{ tag }}/">{{ tag }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>
+  {{ experiment.title }}
+  <div class="postDate">{{experiment.date|datedelta}}</span>
+</h1>
+{% endblock %}
+

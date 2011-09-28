@@ -1,0 +1,8 @@
+/*
+Default styling for html5 elements for the browsers that lack it.
+*/
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+  display:block;
+}

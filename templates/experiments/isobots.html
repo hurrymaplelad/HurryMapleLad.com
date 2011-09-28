@@ -1,0 +1,27 @@
+{% extends "../../templates/experiment.html" %}
+
+{% block content %}
+{{ block.super }}
+<div id="flash"></div>
+<p>
+You can move, but not very far.  You may aim.  Shooting is uncivilized.
+</p>
+<table class="controls">
+  <caption>Controls:</caption>
+  <tr>
+    <th>Move:</th><td>&larr; &uarr; &darr; &rarr;</td>
+  </tr>
+  <tr>
+    <th>Aim:</th><td>Mouse</td>
+  </tr>
+</table>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script>
+  swfobject.embedSWF('/media/experiments/isobots.swf', 'flash', '600', '400', '9.0.0');
+  var flash;
+  window.onload = function() {
+    flash = document.getElementById('flash');
+    flash.focus();
+  }
+</script>
+{% endblock %}

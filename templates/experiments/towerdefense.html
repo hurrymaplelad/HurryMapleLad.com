@@ -1,0 +1,40 @@
+{% extends "../../templates/experiment.html" %}
+
+{% block content %}
+{{ block.super }}
+<div id="flash"></div>
+<p>
+3 waves of enemies.  Basically endless money.  The mouse does everything.
+</p>
+<p>
+You may remember the grass from <a href="/minigolf/">Mini Golf</a>.
+</p>
+
+<p class="attribution">
+  <img src="/media/cc_by.png"
+       alt="creative commons"
+       width="30"
+       height="30" />
+   The enemy art is 
+   <a href="http://www.nintendo.com/"
+      target="_blank"
+      style="display: inline-block; vertical-align: middle;">
+   <img src="/media/nintendo.png"
+        alt="Nintendo"
+        width="62"
+        height="16"/>
+    </a>
+   handiwork.
+</p>
+<p class="fine-print">
+</p>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script>
+  swfobject.embedSWF('/media/experiments/towerdefense.swf', 'flash', '480', '360', '9.0.0');
+  var flash;
+  window.onload = function() {
+    flash = document.getElementById('flash');
+    flash.focus();
+  }
+</script>
+{% endblock %}

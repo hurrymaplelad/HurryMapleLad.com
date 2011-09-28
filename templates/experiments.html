@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Experiments - {{ block.super }}
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/styles/experiments.css">
+{% endblock %}
+
+{% block content %}
+<h1>Experiments</h1>
+{% for experiment in experiments %}
+<a class="experiment"
+   href="{{experiment.slug}}/">
+  <img alt=""
+       src="/media/experiments/{{experiment.slug}}/thumbnail.png"
+       class="icon">
+  <div class="experimentTitle">{{experiment.title}}</div>
+  <div class="postDate">{{experiment.date|datedelta}}</div>
+</a>
+{% endfor %}
+{% endblock %}

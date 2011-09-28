@@ -1,0 +1,20 @@
+{% extends "../../templates/experiment.html" %}
+
+{% block content %}
+{{ block.super }}
+<div id="flash"></div>
+<p>
+Click and drag to fence in the sheep.
+</p>
+
+{# TODO: centralize scripts (dojo? closure?) use local library #}
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script>
+  swfobject.embedSWF('/media/experiments/rotationalgrazing.swf', 'flash', '900', '500', '9.0.0');
+  var flash;
+  window.onload = function() {
+    flash = document.getElementById('flash');
+    flash.focus();
+  };
+</script>
+{% endblock %}

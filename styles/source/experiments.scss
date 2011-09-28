@@ -1,0 +1,26 @@
+$iconSize: 100px;
+
+.experiment {
+  display: block;
+  position: relative;
+  min-height: $iconSize;
+  padding: 10px 0;
+
+  &:hover {
+    text-decoration: none;
+    .experimentTitle {
+      text-decoration: underline;
+    }
+  }
+}
+
+.icon {
+  width: $iconSize;
+  height: $iconSize;
+  position: absolute;
+}
+
+.postDate,
+.experimentTitle {
+  margin-left: $iconSize + 10px;
+}

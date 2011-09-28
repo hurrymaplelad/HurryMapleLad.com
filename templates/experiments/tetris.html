@@ -1,0 +1,33 @@
+{% extends "../../templates/experiment.html" %}
+
+{% block content %}
+{{ block.super }}
+<div id="flash"></div>
+<p>
+Who hasn't built a tetris clone?
+</p>
+<table class="controls">
+  <caption>Controls:</caption>
+  <tr><th>Move:</th><td>&larr; &rarr;</td></tr>
+  <tr><th>Drop:</th><td>&darr;</td></tr>
+  <tr><th>Spin:</th><td>&uarr;</td></tr>
+</table>
+
+<p class="attribution">
+  <img src="/media/cc_by.png"
+       alt="creative commons"
+       width="30"
+       height="30" />
+  In case there was any doubt, I did not invent tetris.  I'm not sure where to give attribution, so I'll just point to 
+  <a href="http://en.wikipedia.org/wiki/Tetris" target="_blank">wikipedia</a>.
+</p>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script>
+  swfobject.embedSWF('/media/experiments/tetris.swf', 'flash', '425', '400', '9.0.0');
+  var flash;
+  window.onload = function() {
+    flash = document.getElementById('flash');
+    flash.focus();
+  };
+</script>
+{% endblock %}

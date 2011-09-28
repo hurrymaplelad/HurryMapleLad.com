@@ -1,0 +1,34 @@
+// Care of http://ryanfait.com/sticky-footer/
+//
+// Dependencies:
+//  - expects a variable called $footerHeight
+//  - assumes margins and padding have been reset
+//  - HTML structure:
+//  <body>
+//    <div class="wrapper">
+//      <!-- Header and all content in here -->
+//    </div>
+//    <footer></footer>
+//  </body>
+//
+
+html, body {
+  height: 100%;
+}
+
+body {
+  > .wrapper {
+    min-height: 100%;
+    &:after {
+      display: block;
+      height:  $footerHeight;
+      content: '';
+      margin-bottom: -$footerHeight;
+    }
+  }
+
+  > footer {
+    height: $footerHeight;
+  }
+}
+

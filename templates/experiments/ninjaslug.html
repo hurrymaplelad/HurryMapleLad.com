@@ -1,0 +1,28 @@
+{% extends "../../templates/experiment.html" %}
+
+{% block content %}
+{{ block.super }}
+<div id="flash"></div>
+<p>
+The result of playing Ninja Gaiden after Metal Slug binges.  I should really make that motorcycle do something.  Don't run off the screen.  There's nothing to shoot.
+</p>
+<table class="controls">
+  <caption>Controls:</caption>
+  <tr>
+    <th>Move:</th><td>&larr; &uarr; &darr; &rarr;</td>
+  </tr>
+  <tr>
+    <th>Shoot:</th><td>Space</td>
+  </tr>
+</table>
+<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+<script>
+  swfobject.embedSWF('/media/experiments/ninjaslug.swf', 'flash', '400', '400', '9.0.0');
+  var flash;
+  window.onload = function() {
+    flash = document.getElementById('flash');
+    flash.focus();
+  }
+</script>
+{% endblock %}
+
