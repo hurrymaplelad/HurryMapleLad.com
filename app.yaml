@@ -15,15 +15,16 @@ handlers:
   static_dir: javascript/min
 
 - url: /.*
-  script: python/source/main.py
+  script: python/src/main.py
 
 skip_files:
 - ^app\.yaml$
-- ^build.xml$
+- ^bin$
+- ^javascript/src$
+- ^python/libs-manifest$
+- ^styles/src$
 - ^.*/index\.yaml$
 - ^.*\.py[co]$
 - ^.*~$
 - ^.*/\..*$
-- ^javascript/source$
-- ^styles/source$
 

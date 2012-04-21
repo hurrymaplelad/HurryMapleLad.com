@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# Builds release versions of styles.
+# (JS coming soon)
+#
+
+# Work from the project root
+cd "$( dirname "$0" )/.."
+
+sass --style compressed --update styles/src:styles/min

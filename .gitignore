@@ -1,2 +1,5 @@
-styles/min
 javascript/min
+styles/min
+python/libs
+
+.sass-cache

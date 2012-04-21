@@ -1,0 +1,49 @@
+#!/bin/bash
+
+#
+# Fetches and installs development and build time dependencies.
+# Run after a fresh clone to get started.
+#
+
+# Work from the project root
+cd "$( dirname "$0" )/.."
+
+# Start fresh
+bin/purge
+
+# Create the temporary directory for downloads
+mkdir -p tmp
+
+# Dump and create the python libs directory
+mkdir -p python/libs
+
+# setup python libraries declared in the libs-manifest.
+for pkgdir in python/libs-manifest/* ; do
+  pkgname=`basename "$pkgdir"`
+  url=`cat "$pkgdir/url"`
+  archive=`basename "$url"`
+  distdir=`basename "$url" ".tar.gz"`
+
+  # download archive
+  wget --directory-prefix=tmp "$url"
+
+  # verify checksum
+  checksum=`md5 "tmp/$archive"`
+  expected=`cat "$pkgdir/md5"`
+  if [ "MD5 (tmp/$archive) = $expected" == "$checksum" ]; then
+    echo "$archive checksum passed"
+  else
+    echo "ERROR: $archive checksum failed!"
+    exit 1
+  fi
+  
+  # expand archive
+  tar -zxf "tmp/$archive" -C "tmp"
+
+  # install python source files
+  mv -f "tmp/$distdir/$pkgname" python/libs
+  echo "$pkgname installed"
+done
+
+# Trash the temporary directory
+rm -rf tmp

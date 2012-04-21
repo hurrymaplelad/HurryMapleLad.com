@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#
+# Removes all build artifacts
+#
+
+# Work from the project root
+cd "$( dirname "$0" )/.."
+
+echo "removing build artifacts:"
+rm -rfv styles/min

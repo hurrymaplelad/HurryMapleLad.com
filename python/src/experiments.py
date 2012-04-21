@@ -11,7 +11,7 @@ class Experiment(RequestHandler):
     data.update({
       'experiment': self
     })
-    path = 'templates/experiments/%s.html' % self.slug
+    path = '../../templates/experiments/%s.html' % self.slug
     super(Experiment, self).render(path, data)
 
   def get(self):

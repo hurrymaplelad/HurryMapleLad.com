@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# Clean build artifacts and remove installed libs
+#
+
+# Work from the project root
+cd "$( dirname "$0" )/.."
+
+bin/clean
+
+echo "purging setup:"
+rm -rfv \
+  python/libs \
+  tmp
