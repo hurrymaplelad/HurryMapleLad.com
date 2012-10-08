@@ -1,7 +1,5 @@
 # [Hurrymaplelad.com](http://hurrymaplelad.com)
 
-[Adam](https://plus.google.com/111157128870136027943/about)'s web engineering playground and portfolio.
-
 ## Getting Started
 
 1. Clone the repo
